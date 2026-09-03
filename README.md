@@ -84,8 +84,13 @@ Si el candidato la ve, la sesión pierde valor. Por eso:
 - Nunca pegues fragmentos del guion en el chat de la sesión.
 - Si vas a grabar pantalla, verificá qué ventana estás grabando.
 
-Si usás el repo para onboarding interno en vez de entrevista, el guion sí se
-puede compartir después de la sesión como material de repaso.
+El repo es público, así que un candidato podría leer `interviewer/` de
+antemano. Asumilo: usá las katas para ver cómo razona y comunica, no para
+comprobar si conoce la respuesta. Si querés una prueba a ciegas, escribí una
+kata nueva y no la publiques hasta después de usarla.
+
+Si usás el repo para onboarding interno, el guion se puede compartir después
+de la sesión como material de repaso.
 
 ## Crear una kata nueva
 
