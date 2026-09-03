@@ -1,0 +1,15 @@
+{
+  "name": "@bitua/kata-02-sent-successfully",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scenario": "bun run scenario.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "typescript": "^5.6.0"
+  }
+}
