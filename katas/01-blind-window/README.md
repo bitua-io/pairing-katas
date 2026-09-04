@@ -68,5 +68,9 @@ bun test              # 5 pasan, 6 fallan; describen el comportamiento esperado
 Los tests que pasan hoy tienen que seguir pasando. Nadie debe recibir un
 correo dos veces.
 
+La sesión dura 60 minutos. No hace falta terminar todo: nos interesa más
+cómo llegás al diagnóstico y cómo pensás el arreglo que cuántos tests
+quedan verdes.
+
 No hay una única respuesta correcta. Vamos a conversar sobre las
 alternativas mientras trabajás.

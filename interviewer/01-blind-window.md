@@ -1,6 +1,6 @@
 # Guion · Kata 01 `blind-window`
 
-**Nivel:** senior · **Duración:** 75-90 min · **Formato:** pair programming,
+**Nivel:** senior · **Duración:** 60 min · **Formato:** pair programming,
 el candidato escribe, vos navegás.
 
 **NO compartir esta carpeta.** Compartí solo `katas/01-blind-window/`.
@@ -17,19 +17,54 @@ después de arrancar se ignoran.
 Origen: `changes-feed-worker.ts` (`start()` toma `info.update_seq`) más el
 listener de reservas (`isOccupiedTransition` exige `prevStatus`).
 
-## Timeline sugerido
+## Qué queremos responder en esta sesión
+
+La sesión dura 60 minutos y no alcanza para que un senior resuelva todo el
+problema con calma. No importa. El objetivo no es el arreglo, es responder
+estas preguntas sobre el candidato. Anotá evidencia concreta para cada una
+mientras trabaja, y volvé a ellas al escribir el feedback.
+
+1. **¿Diagnostica con evidencia o con intuición?** ¿Corre el escenario y lee
+   el log antes de abrir el código? ¿Formula una hipótesis y la verifica, o
+   cambia código a ver qué pasa? Evidencia: cómo llega a la ventana ciega y
+   cuántas pistas necesitó.
+2. **¿Entiende estado durable vs estado en memoria?** ¿Nota que el checkpoint
+   del feed y `previousStatus` mueren con el proceso? ¿Llega solo a "la
+   verdad tiene que vivir en el doc"? Evidencia: lo que dice cuando ve el
+   `previousStatus.clear()` en `stop()`.
+3. **¿Diseña antes de escribir y nombra trade-offs?** ¿Puede explicar
+   checkpoint persistido vs barrido, elegir uno y decir qué pierde? ¿Acepta
+   cambiar de idea con un argumento? Evidencia: la conversación de la fase 2.
+4. **¿Piensa en idempotencia y en producción?** ¿Le preocupa mandar un correo
+   dos veces tanto como no mandarlo? ¿Pregunta por volumen, índices, ventana
+   a barrer, rollout? Evidencia: si menciona `scheduledEmailSentAt` como
+   guarda antes de que se lo digas, y lo que responde en el cierre.
+5. **¿Cómo es trabajar en par con esta persona?** ¿Piensa en voz alta,
+   pregunta cuando duda, dice "no sé", explica lo que escribe? ¿Cómo
+   reacciona a una pista que contradice su hipótesis? Evidencia: cualquier
+   momento de fricción y cómo lo resolvió.
+
+Si al final de la hora tenés una respuesta clara para las cinco, la sesión
+fue exitosa aunque no haya pasado ningún test rojo.
+
+## Timeline sugerido (60 min)
 
 | Fase | Tiempo | Meta |
 |---|---|---|
 | 0. Contexto | 5 min | Leen el README juntos. Aclarás dominio, no causa. |
-| 1. Diagnóstico | 20-25 min | Que nombre la ventana ciega con evidencia del log. |
-| 2. Diseño | 15-20 min | Que elija entre checkpoint persistido y barrido, y justifique. |
-| 3. Código | 30-35 min | Tests verdes, escenario verde, sin duplicados. |
-| 4. Cierre | 10 min | Preguntas de producción: ventana a barrer, PRs, flags. |
+| 1. Diagnóstico | 15 min | Que nombre la ventana ciega con evidencia del log. |
+| 2. Diseño | 15 min | Que elija entre checkpoint persistido y barrido, y justifique. |
+| 3. Código | 15-20 min | Que pase el primer test de "ventana ciega" sin romper los verdes. |
+| 4. Cierre | 5-10 min | Dos preguntas de producción: ventana a barrer y PRs con flags. |
+
+Con 60 minutos la fase 3 es corta a propósito. La meta es que implemente el
+barrido para el caso `scheduled` y pase el test "notifica reservas scheduled
+creadas mientras el worker estaba caído". El caso `occupied` y la trampa de
+`previousStatus` se pueden resolver verbalmente en el cierre si no hubo
+tiempo. Si a los 35 minutos todavía está diagnosticando, dale la pista 3 y
+pasá a diseño: preferimos escuchar cómo razona el arreglo a verlo tipear.
 
 Si va rápido, la fase 3 puede incluir el segundo problema (`previousStatus`).
-Si va lento, cortá la fase 3 cuando pase el primer test de "ventana ciega" y
-dedicá el resto a diseño verbal.
 
 ## Fase 1 · Diagnóstico
 

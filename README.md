@@ -12,7 +12,7 @@ necesita servicios externos.
 
 | # | Slug | Nivel | Duración | Tema |
 |---|---|---|---|---|
-| 01 | `blind-window` | senior | 75-90 min | Worker de changes feed que pierde eventos al reiniciar |
+| 01 | `blind-window` | senior | 60 min | Worker de changes feed que pierde eventos al reiniciar |
 | 02 | `sent-successfully` | junior | 45-60 min | Servicio de correo que loguea éxito ignorando rechazos SMTP |
 
 ## Convención de carpetas
