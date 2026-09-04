@@ -2,9 +2,9 @@
 
 ## El incidente
 
-Bitua tiene una app de agendamiento, solo para teléfono, con la que ciertas
-personas autorizadas de un hospital (cardiólogos, instrumentadores) reservan
-maletas médicas para una cirugía: una maleta trae, por ejemplo, un marcapasos
+Bitua tiene una app de agendamiento, solo para teléfono, con la que los
+comerciales de fabricantes de dispositivos médicos (Medtronic, por ejemplo)
+reservan maletas para una cirugía en un hospital: una maleta trae, por ejemplo, un marcapasos
 o un dispositivo cardíaco con todo su material. Cuando alguien agenda una
 maleta, el equipo operativo recibe un correo para prepararla. Cuando la
 maleta se entrega en el hospital (la reserva pasa a `occupied`), quien la
