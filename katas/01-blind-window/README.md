@@ -2,9 +2,13 @@
 
 ## El incidente
 
-Bitua opera armarios inteligentes en hospitales. Cuando alguien reserva una
-maleta, el equipo operativo recibe un correo. Cuando la maleta se entrega
-(la reserva pasa a `occupied`), quien reservó recibe otro correo.
+Bitua tiene una app de agendamiento, solo para teléfono, con la que ciertas
+personas autorizadas de un hospital (cardiólogos, instrumentadores) reservan
+maletas médicas para una cirugía: una maleta trae, por ejemplo, un marcapasos
+o un dispositivo cardíaco con todo su material. Cuando alguien agenda una
+maleta, el equipo operativo recibe un correo para prepararla. Cuando la
+maleta se entrega en el hospital (la reserva pasa a `occupied`), quien la
+agendó recibe otro correo.
 
 El lunes a la mañana soporte abre un ticket:
 

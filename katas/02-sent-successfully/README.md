@@ -2,9 +2,12 @@
 
 ## El incidente
 
-Bitua manda un correo al equipo operativo de cada hospital cuando se crea una
-reserva de maleta. La lista de destinatarios la configura el cliente y suele
-tener entre 3 y 12 casillas.
+Bitua tiene una app de agendamiento, solo para teléfono, con la que ciertas
+personas autorizadas de un hospital reservan maletas médicas para una
+cirugía: una maleta trae, por ejemplo, un marcapasos o un dispositivo
+cardíaco con todo su material. Cada vez que alguien agenda una maleta, el
+equipo operativo del hospital recibe un correo para prepararla. La lista de
+destinatarios la configura el cliente y suele tener entre 3 y 12 casillas.
 
 Soporte recibe este mensaje de un cliente:
 
